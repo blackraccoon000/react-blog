@@ -1,0 +1,17 @@
+{
+  "name": "react-blog",
+  "version": "1.0.0",
+  "description": "Create a blog using React with practice.",
+  "main": "app.js",
+  "repository": "git@github.com:blackraccoon000/react-blog.git",
+  "author": "Yutaka Fujii <yutakaf@playwell.site>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
