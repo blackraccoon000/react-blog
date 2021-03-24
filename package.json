@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Create a blog using React with practice.",
   "main": "app.js",
+  "scripts": {
+    "live-server":"live-server public",
+    "webpack:dev":"npx webpack --mode development"
+  },
   "repository": "git@github.com:blackraccoon000/react-blog.git",
   "author": "Yutaka Fujii <yutakaf@playwell.site>",
   "license": "MIT",
