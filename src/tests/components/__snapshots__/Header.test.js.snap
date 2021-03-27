@@ -15,7 +15,7 @@ exports[`should render Header Components 1`] = `
     <button
       onClick={[Function]}
     >
-      Login
+      open
     </button>
   </div>
 </header>

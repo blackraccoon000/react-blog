@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppRouter経由でHomeディレクトリが描画されることを確認 1`] = `
+<div>
+  <div>
+    <div>
+      HeaderPage Use ManualMock
+    </div>
+    <div>
+      HomePage Use ManualMock
+    </div>
+  </div>
+</div>
+`;

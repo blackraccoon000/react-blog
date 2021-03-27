@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavMenu Components 1`] = `
+<div>
+  <ul>
+    <li>
+      <NavLink
+        activeClassName="is-active"
+        to="/"
+      >
+        Home
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        activeClassName="is-active"
+        to="/dashboard"
+      >
+        Dashboard
+      </NavLink>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,5 +1,5 @@
 import React from "react"
-
+import NavMenu from "./NavMenu"
 class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -16,8 +16,8 @@ class Header extends React.Component {
       <header className="header">
         <div className="content-container">
           <h1 className="header__title">My Blog</h1>
-          { this.state.flag && <p>button clicked!</p> }
-          <button onClick={this.onClickBtn}>Login</button>
+          { this.state.flag && <NavMenu history={history}/> }
+          <button onClick={this.onClickBtn}>open</button>
         </div>
       </header>
     )

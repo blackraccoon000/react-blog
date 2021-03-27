@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboardが描画できているか 1`] = `
+<div>
+  <div>
+    <div>
+      HeaderPage Use ManualMock
+    </div>
+    <div>
+      DashboardPage Use ManualMock
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Homeが描画できているか 1`] = `
+<div>
+  <div>
+    <div>
+      HeaderPage Use ManualMock
+    </div>
+    <div>
+      HomePage Use ManualMock
+    </div>
+  </div>
+</div>
+`;
