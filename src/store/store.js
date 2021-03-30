@@ -1,9 +1,7 @@
-import React from "react"
-import ReactDOM from "react-dom"
 import { createStore, combineReducers } from "redux"
 
-import blogReducer from "./blogReducer"
-import filtersReducer from "./filtersReducer"
+import blogReducer from "../reducers/blogReducer"
+import filtersReducer from "../reducers/filtersReducer"
 
 const store = createStore(
   combineReducers({

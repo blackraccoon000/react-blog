@@ -34,7 +34,6 @@ const getVisibleBlogData = (blogData, filters) => {
   })
 
   return outputFilters
-  // return matchFilters
 }
 
 export default getVisibleBlogData
