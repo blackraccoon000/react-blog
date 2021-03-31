@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteList Render 1`] = `
+<div>
+  <div>
+    <h2>
+      Note List
+    </h2>
+    <div>
+      <h3>
+        first blog
+      </h3>
+      <p>
+        1 create blog now one
+      </p>
+      <p>
+        d4c9a72e-cc5d-413f-99f5-a048af23c9b5
+         : 
+        1000
+      </p>
+    </div>
+    <div>
+      <h3>
+        second blog
+      </h3>
+      <p>
+        2 create blog now two
+      </p>
+      <p>
+        9812c444-bd65-4cdb-a57b-954313a0ae78
+         : 
+        2000
+      </p>
+    </div>
+    <div>
+      <h3>
+        third blog
+      </h3>
+      <p>
+        3 create blog now three
+      </p>
+      <p>
+        ff43e2f5-437e-4ab0-85c9-a02e1c70a568
+         : 
+        3000
+      </p>
+    </div>
+    <div>
+      <h3>
+        Forth blog
+      </h3>
+      <p>
+        4 create blog now four
+      </p>
+      <p>
+        c618bf97-b7f5-4938-a28d-351364f482b9
+         : 
+        4000
+      </p>
+    </div>
+    <div>
+      <h3>
+        Fifth blog
+      </h3>
+      <p>
+        5 create blog now five
+      </p>
+      <p>
+        d51e5232-1698-4eb5-ae64-7beb1783e7b0
+         : 
+        5000
+      </p>
+    </div>
+  </div>
+</div>
+`;

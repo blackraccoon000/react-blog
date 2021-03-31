@@ -2,23 +2,29 @@
 
 exports[`should render NavMenu Components 1`] = `
 <div>
-  <ul>
-    <li>
-      <NavLink
-        activeClassName="is-active"
-        to="/"
-      >
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="is-active"
-        to="/dashboard"
-      >
-        Dashboard
-      </NavLink>
-    </li>
-  </ul>
+  <div>
+    <ul
+      data-testid="navMenuBar"
+    >
+      <li>
+        <a
+          aria-current="page"
+          class="is-active"
+          data-testid="HomeLink"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="DashboardLink"
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 `;

@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom"
 const NavMenu = () => {
   return (
     <div>
-      <ul>
-        <li><NavLink activeClassName="is-active" to="/" >Home</NavLink></li>
-        <li><NavLink activeClassName="is-active" to="/dashboard" >Dashboard</NavLink></li>
+      <ul data-testid="navMenuBar">
+        <li><NavLink activeClassName="is-active" to="/" data-testid="HomeLink">Home</NavLink></li>
+        <li><NavLink activeClassName="is-active" to="/dashboard" data-testid="DashboardLink">Dashboard</NavLink></li>
       </ul>
     </div>
   )

@@ -6,7 +6,6 @@ const Home = (props) => {
   return (
     <div>
       <div className="content-container">
-        {/* <h1 data-testid="homeDisplay">This Component is Home</h1> */}
         <button  data-testid="homeToDashboardButton" onClick={()=>{
           history.push("/dashboard")
         }}>Go Dashboard</button>

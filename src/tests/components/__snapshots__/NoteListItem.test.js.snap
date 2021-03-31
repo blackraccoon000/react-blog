@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteListItem Render 1`] = `
+<div>
+  <div>
+    <h3>
+      first blog
+    </h3>
+    <p>
+      1 create blog now one
+    </p>
+    <p>
+      d4c9a72e-cc5d-413f-99f5-a048af23c9b5
+       : 
+      1000
+    </p>
+  </div>
+</div>
+`;

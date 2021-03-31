@@ -3,16 +3,15 @@
 exports[`Home ComponentのSnapshot 1`] = `
 <div>
   <div>
-    <h1
-      data-testid="homeDisplay"
+    <div
+      class="content-container"
     >
-      This Component is Home
-    </h1>
-    <button
-      data-testid="homeToDashboardButton"
-    >
-      Go Dashboard
-    </button>
+      <button
+        data-testid="homeToDashboardButton"
+      >
+        Go Dashboard
+      </button>
+    </div>
   </div>
 </div>
 `;
