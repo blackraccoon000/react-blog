@@ -23,6 +23,7 @@ store.subscribe(()=>{
 
 store.dispatch(sorByDate())
 store.dispatch(sortOrderDescending())
+// store.dispatch(sortOrderAscending())
 store.dispatch(createBlog(createDataOne))
 store.dispatch(createBlog(createDataTwo))
 store.dispatch(createBlog(createDataThree))

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteListFilters Render 1`] = `
+<div>
+  <div>
+    <input
+      data-testid="textFilter"
+      type="text"
+      value="filtersText"
+    />
+    <select
+      data-testid="dataOrText"
+    >
+      <option
+        data-testid="select-date"
+        value="date"
+      >
+        date
+      </option>
+      <option
+        data-testid="select-text"
+        value="text"
+      >
+        text
+      </option>
+    </select>
+    <select
+      data-testid="ascOrDes"
+    >
+      <option
+        value="ascending"
+      >
+        ascending
+      </option>
+      <option
+        value="descending"
+      >
+        descending
+      </option>
+    </select>
+    <input
+      data-testid="squeezeFilter"
+      type="number"
+      value=""
+    />
+  </div>
+</div>
+`;

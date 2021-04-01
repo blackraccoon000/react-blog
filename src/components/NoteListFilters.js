@@ -4,21 +4,31 @@ import { setText, setStartDate, setEndDate, setSqueezeNum, } from "../actions/fi
 import selectValueFilterFn from "../selectors/selectValueFilterFn"
 
 const NoteListFilters = (props) => {
-  console.log(props.inputTextFilterDispatcher)
   return (
   <div>
     <input type="text" defaultValue={props.filters.text}
-      onChange={props.inputTextFilter}/>
-    <select onChange={props.selectValueFilter}>
-      <option value="date">date</option>
-      <option value="text">text</option>
+      onChange={props.inputTextFilter}
+      data-testid="textFilter"/>
+    <select
+      value={props.filters.sortBy}
+      onChange={props.selectValueFilter}
+      data-testid="dataOrText"
+    >
+      <option value="date" data-testid="select-date">date</option>
+      <option value="text" data-testid="select-text">text</option>
     </select>
-    <select onChange={props.selectValueFilter}>
+    <select
+      value={props.filters.sortOrder}
+      onChange={props.selectValueFilter}
+      data-testid="ascOrDes"
+    >
       <option value="ascending">ascending</option>
       <option value="descending">descending</option>
     </select>
     <input type="number" defaultValue={props.filters.squeezeNum}
-      onChange={props.inputSqueezeFilter}/>
+      onChange={props.inputSqueezeFilter}
+      data-testid="squeezeFilter"
+    />
   </div>
 )}
 
@@ -37,3 +47,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(NoteListFilters)
+export { NoteListFilters }

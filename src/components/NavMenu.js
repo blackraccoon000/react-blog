@@ -7,6 +7,7 @@ const NavMenu = () => {
       <ul data-testid="navMenuBar">
         <li><NavLink activeClassName="is-active" to="/" data-testid="HomeLink">Home</NavLink></li>
         <li><NavLink activeClassName="is-active" to="/dashboard" data-testid="DashboardLink">Dashboard</NavLink></li>
+        <li><NavLink activeClassName="is-active" to="/create" data-testid="CreateLink">Create</NavLink></li>
       </ul>
     </div>
   )

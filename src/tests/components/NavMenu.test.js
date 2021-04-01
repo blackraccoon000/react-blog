@@ -32,3 +32,8 @@ it("testid: DashboardLinkがあることの確認",()=>{
   const getId = screen.getByTestId("DashboardLink")
   expect(getId).toHaveAttribute('href', '/dashboard')
 })
+
+it("testid: CreateLinkがあることの確認",()=>{
+  const getId = screen.getByTestId("CreateLink")
+  expect(getId).toHaveAttribute('href', '/create')
+})

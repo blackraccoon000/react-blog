@@ -35,6 +35,14 @@ exports[`navBarFlagButtonが描画されていること、Click後にNavMenuが�
               Dashboard
             </a>
           </li>
+          <li>
+            <a
+              data-testid="CreateLink"
+              href="/create"
+            >
+              Create
+            </a>
+          </li>
         </ul>
       </div>
       <button

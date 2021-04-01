@@ -6,13 +6,13 @@ const setText = (text = 0) => {
   }
 }
 
-const sorByDate = () => {
+const sortByDate = () => {
   return {
     type:"SORT_BY_DATE"
   }
 }
 
-const sorByText = () => {
+const sortByText = () => {
   return {
     type:"SORT_BY_TEXT"
   }
@@ -51,5 +51,5 @@ const setSqueezeNum = (squeezeNum) => {
   }
 }
 
-export { setText, sorByDate, sorByText, setStartDate, setEndDate,
+export { setText, sortByDate, sortByText, setStartDate, setEndDate,
   setSqueezeNum, sortOrderAscending, sortOrderDescending }

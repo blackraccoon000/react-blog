@@ -7,7 +7,6 @@ const blogReducer = (state = blogReducerDefaultState, action) => {
         ...state, action.blog
       ]
     case "REMOVE_BLOG":
-      console.log(action)
       return state.filter(({id}) => id !== action.id)
     case "EDIT_BLOG":
       return state.map((blog)=>{

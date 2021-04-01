@@ -4,7 +4,7 @@ const filtersReducerDefaultState = {
   sortOrder: "ascending", // ascending , descending
   startDate: undefined,
   endDate: undefined,
-  squeezeNum: null
+  squeezeNum: ""
 }
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {

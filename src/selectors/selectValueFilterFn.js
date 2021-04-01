@@ -1,12 +1,12 @@
-import { sorByDate, sorByText, sortOrderAscending, sortOrderDescending } from "../actions/filterActions"
+import { sortByDate, sortByText, sortOrderAscending, sortOrderDescending } from "../actions/filterActions"
 
 const selectValueFilterFn = (e,dispatch) => {
   const value = e.target.value
   switch (value) {
     case "date":
-      return dispatch(sorByDate())
+      return dispatch(sortByDate())
     case "text":
-      return dispatch(sorByText())
+      return dispatch(sortByText())
     case "ascending":
       return dispatch(sortOrderAscending())
     case "descending":
