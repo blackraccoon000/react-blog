@@ -1,5 +1,5 @@
 
-const setText = (text = 0) => {
+const setText = (text = "") => {
   return {
     type:"SET_TEXT",
     text
