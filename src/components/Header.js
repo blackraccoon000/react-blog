@@ -17,7 +17,7 @@ class Header extends React.Component {
         <div className="content-container">
           <h1 className="header__title">My Blog</h1>
           { this.state.flag && <NavMenu history={history}/> }
-          <button onClick={this.onClickBtn}>open</button>
+          <button data-testid="navBarFlagButton" onClick={this.onClickBtn}>open</button>
         </div>
       </header>
     )

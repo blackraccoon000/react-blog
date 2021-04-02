@@ -1,23 +1,27 @@
 import React from "react"
-import { shallow, render } from "enzyme"
+import { render, fireEvent, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
+import userEvent from '@testing-library/user-event'
 import Header from "../../components/Header"
 
 let wrapper, onClickBtn
 
 beforeEach(()=>{
   onClickBtn = jest.fn()
-  wrapper = shallow(<Header onClickBtn={onClickBtn}/>)
+  wrapper = render(
+    <MemoryRouter>
+      <Header onClickBtn={onClickBtn}/>
+    </MemoryRouter>
+  )
 })
 
 it("should render Header Components", () => {
-  expect(wrapper).toMatchSnapshot()
+  expect(wrapper.container).toMatchSnapshot()
 })
 
-// it("should Header Components Button Click for flag false => true", () => {
-//   expect(wrapper.find("button").length).toBe(1)
-//   expect(wrapper.state("flag")).toBe(false)
-//   wrapper.find("button").simulate("click")
-//   expect(wrapper.state("flag")).toBe(true)
-//   expect(wrapper.find("NavMenu").length).toBe(1)
-//   expect(wrapper).toMatchSnapshot()
-// })
+it("navBarFlagButtonが描画されていること、Click後にNavMenuが描画されることを確認", () => {
+  const leftClick = { button: 0 }
+  userEvent.click(screen.getByTestId('navBarFlagButton'), leftClick)
+  expect(screen.getByTestId("navMenuBar")).toBeInTheDocument()
+  expect(wrapper.container).toMatchSnapshot()
+})

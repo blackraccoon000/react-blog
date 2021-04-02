@@ -2,13 +2,16 @@
 
 exports[`should render Dashboard components 1`] = `
 <div>
-  <h1>
-    This Component is Dashboard
-  </h1>
-  <button
-    onClick={[Function]}
+  <div
+    className="content-container"
   >
-    Go Home
-  </button>
+    <Connect(NoteListFilters) />
+    <Connect(NoteList) />
+    <button
+      onClick={[Function]}
+    >
+      Go Home
+    </button>
+  </div>
 </div>
 `;

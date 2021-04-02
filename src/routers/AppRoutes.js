@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 
 import PublicRoute from "./PublicRoute"
+import CreateNote from "../components/CreateNote"
 import Dashboard from "../components/Dashboard"
 import Home from "../components/Home"
 
@@ -12,6 +13,7 @@ const AppRoutes = () => {
       <Route path="/dashboard" component={Dashboard}/> */}
       <PublicRoute path="/" component={Home} exact={true} />
       <PublicRoute path="/dashboard" component={Dashboard} exact={true} />
+      <PublicRoute path="/create" component={CreateNote} exact={true} />
     </Switch>
   )
 }

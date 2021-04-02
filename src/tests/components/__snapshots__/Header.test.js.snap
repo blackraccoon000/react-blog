@@ -1,22 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header Components 1`] = `
-<header
-  className="header"
->
-  <div
-    className="content-container"
+exports[`navBarFlagButtonが描画されていること、Click後にNavMenuが描画されることを確認 1`] = `
+<div>
+  <header
+    class="header"
   >
-    <h1
-      className="header__title"
+    <div
+      class="content-container"
     >
-      My Blog
-    </h1>
-    <button
-      onClick={[Function]}
+      <h1
+        class="header__title"
+      >
+        My Blog
+      </h1>
+      <div>
+        <ul
+          data-testid="navMenuBar"
+        >
+          <li>
+            <a
+              aria-current="page"
+              class="is-active"
+              data-testid="HomeLink"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="DashboardLink"
+              href="/dashboard"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="CreateLink"
+              href="/create"
+            >
+              Create
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button
+        data-testid="navBarFlagButton"
+      >
+        open
+      </button>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`should render Header Components 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <div
+      class="content-container"
     >
-      open
-    </button>
-  </div>
-</header>
+      <h1
+        class="header__title"
+      >
+        My Blog
+      </h1>
+      <button
+        data-testid="navBarFlagButton"
+      >
+        open
+      </button>
+    </div>
+  </header>
+</div>
 `;

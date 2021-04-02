@@ -1,6 +1,8 @@
 const path = require("path")
 
 module.exports = {
+  // entry: './src/playground/mini-react-redux.js',
+  // entry: './src/playground/redux-101.js',
   entry: './src/app.js',
   output: {
     path: path.join(__dirname,"public","dist"),
