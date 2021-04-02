@@ -3,17 +3,20 @@
 exports[`NoteListItem Render 1`] = `
 <div>
   <div>
-    <h3>
-      first blog
-    </h3>
-    <p>
-      1 create blog now one
-    </p>
-    <p>
-      d4c9a72e-cc5d-413f-99f5-a048af23c9b5
-       : 
-      1000
-    </p>
+    <a
+      class="note-list-item"
+      href="/edit/d4c9a72e-cc5d-413f-99f5-a048af23c9b5"
+    >
+      <h3>
+        first blog
+      </h3>
+      <p>
+        1 create blog now one
+      </p>
+      <p>
+        1000
+      </p>
+    </a>
   </div>
 </div>
 `;

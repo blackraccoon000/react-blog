@@ -9,7 +9,7 @@ import Icon from "./img/favicon.png"
 import AppRouter from "./routers/AppRouter"
 import store from "./store/store"
 import { createBlog } from "./actions/blogActions"
-import { setText, sorByDate, sorByText, setStartDate, setEndDate,
+import { setText, sortByDate, sortByText, setStartDate, setEndDate,
   setSqueezeNum, sortOrderAscending, sortOrderDescending } from "./actions/filterActions"
 import { createDataOne, createDataTwo, createDataThree, createDataFour, createDataFive } from "./tests/fixtures/createData"
 import getVisibleBlogData from "./selectors/getVisibleBlogData"
@@ -21,9 +21,9 @@ store.subscribe(()=>{
   // console.log("squeeze ",visibleBlogData)
 })
 
-store.dispatch(sorByDate())
-store.dispatch(sortOrderDescending())
-// store.dispatch(sortOrderAscending())
+// store.dispatch(sortByDate())
+// store.dispatch(sortOrderDescending())
+// // store.dispatch(sortOrderAscending())
 store.dispatch(createBlog(createDataOne))
 store.dispatch(createBlog(createDataTwo))
 store.dispatch(createBlog(createDataThree))

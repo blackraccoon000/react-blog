@@ -14,6 +14,7 @@ const AppRoutes = () => {
       <PublicRoute path="/" component={Home} exact={true} />
       <PublicRoute path="/dashboard" component={Dashboard} exact={true} />
       <PublicRoute path="/create" component={CreateNote} exact={true} />
+      <PublicRoute path="/edit/:id" component={CreateNote} />
     </Switch>
   )
 }

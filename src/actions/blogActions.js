@@ -2,11 +2,11 @@ import {v4 as uuidv4} from "uuid"
 import { DateTime } from "luxon";
 
 const createBlog = (createData) => {
-  const { title, note, createdAt=DateTime.now().ts } = createData
+  const { id=uuidv4(), title, note, createdAt=DateTime.now().ts } = createData
   return {
     type:"CREATE_BLOG",
     blog: {
-      id: uuidv4(),
+      id,
       title,
       note,
       createdAt

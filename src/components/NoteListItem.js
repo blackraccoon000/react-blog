@@ -6,9 +6,11 @@ import { Link } from "react-router-dom"
 const NoteListItem = ({id,title,note,createdAt}) => {
   return (
       <div>
-        <h3>{title}</h3>
-        <p>{note}</p>
-        <p>{id} : {createdAt}</p>
+        <Link className="note-list-item" to={`/edit/${id}`}>
+          <h3>{title}</h3>
+          <p>{note}</p>
+          <p>{createdAt}</p>
+        </Link>
       </div>
 )}
 

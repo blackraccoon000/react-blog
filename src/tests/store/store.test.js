@@ -8,6 +8,10 @@ it("store getState in blogData", () => {
   expect(store.getState().blogData).toStrictEqual([])
 })
 
+it("store getState in temp", () => {
+  expect(store.getState().temp).toStrictEqual({"note": "", "title": ""})
+})
+
 it("store getState in filters", () => {
   expect(store.getState().filters).toStrictEqual({
     text: '',
