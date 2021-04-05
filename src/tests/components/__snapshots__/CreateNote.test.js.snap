@@ -8,6 +8,7 @@ exports[`CreateNote Render 1`] = `
     <h1>
       This is Create Note Page
     </h1>
+    
     <div>
       <form>
         <input

@@ -72,6 +72,7 @@ class CreateNote extends React.Component {
 
 const mapStateToProps = (state,ownProps) =>{
   const findData = state.blogData.find(note => note.id === ownProps.match.params.id)
+  console.log(findData)
   return {
     findData: findData ? findData : {
       title:"",

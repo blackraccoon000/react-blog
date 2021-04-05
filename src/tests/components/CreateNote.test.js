@@ -3,14 +3,18 @@ import { render, fireEvent, screen, cleanup } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { CreateNote } from "../../components/CreateNote"
 
-let onChange, onSubmit, wrapper
+let onChange, onSubmit, wrapper, match, findData
 
 beforeEach(()=>{
   onChange = jest.fn()
   onSubmit = jest.fn()
+  match = { params:{ id: undefined }}
+  findData = { title:"", note:"" }
   wrapper = render(<CreateNote
     onChange = {onChange}
     onSubmit = {onSubmit}
+    match = {match}
+    findData = {findData}
   />)
 })
 
