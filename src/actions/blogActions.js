@@ -2,14 +2,29 @@ import {v4 as uuidv4} from "uuid"
 import { DateTime } from "luxon";
 
 const createBlog = (createData) => {
-  const { id=uuidv4(), title, note, createdAt=DateTime.now().ts } = createData
+  const { id=uuidv4(), title, note, createdAt=DateTime.now().ts, link="" } = createData
   return {
     type:"CREATE_BLOG",
     blog: {
       id,
       title,
       note,
+      link,
       createdAt
+    }
+  }
+}
+
+const editBlog = (id,updates) => {
+  const { title="", note="", link="" } = updates
+  return {
+    type:"EDIT_BLOG",
+    id,
+    updates: {
+      title,
+      note,
+      link,
+      updatedAt:DateTime.now().ts
     }
   }
 }
@@ -21,17 +36,12 @@ const removeBlog = (id) => {
   }
 }
 
-const editBlog = (id,updates) => {
-  const { title="", note="" } = updates
+const setBlog = (blogData) => {
   return {
-    type:"EDIT_BLOG",
-    id,
-    updates: {
-      title,
-      note,
-      updatedAt:DateTime.now().ts
-    }
+    type:"SET_BLOG_DATA",
+    blogData
   }
 }
 
-export { createBlog, removeBlog, editBlog }
+
+export { createBlog, editBlog, removeBlog, setBlog }

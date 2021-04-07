@@ -1,0 +1,125 @@
+.article_box {
+  background: #e9e7f3;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+}
+
+.article_title {
+  color: $dark-gray;
+  font-size: $font-size-large;
+  margin: 0;
+  order: 0;
+  padding: 0;
+}
+
+.article_summary {
+  color: $gray;
+  font-size: $font-size-medium;
+  line-height: 1.5;
+  margin: 0;
+  order: 2;
+}
+
+.article_date {
+  color: $dark-gray;
+  font-size: $font-size-small;
+  margin: 10px 0 0;
+  order: 1;
+}
+
+.article_note {
+  display: flex;
+  margin: 20px;
+}
+
+.article_figure {
+  background: #d4cbff;
+  // border: 0.1px solid;
+  margin: 10px 0 10px 0;
+  width: 250px;
+}
+
+.article_figcaption {
+  margin: 10px;
+}
+
+.article_img {
+  width: 250px;
+}
+
+/**
+  article__main / article__sub
+
+  div> article-item
+    div> article-item__photo
+      img> article-item__img
+    div> article-item__box
+      div> article-item__title
+      div> article-item__text
+      div> article-item__date
+*/
+
+.article-item {
+  background-color: #e9e7f3;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 520px;
+
+  @media (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    width: 700px;
+  }
+
+  .article-item__photo {
+    margin: 10px 0 0 10px;
+
+    .article-item__img {
+      height: 300px;
+      margin: 0;
+      object-fit: cover;
+      padding: 0;
+      width: 500px;
+    }
+  }
+
+  .article-item__box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-bottom: 0;
+
+    @media (min-width: $desktop-breakpoint) {
+      margin-left: 30px;
+    }
+
+    .article-item__title {
+      color: $dark-gray;
+      font-size: $font-size-large;
+      margin: 0;
+      order: 0;
+      padding: 0;
+    }
+    .article-item__text {
+      color: $gray;
+      font-size: $font-size-medium;
+      line-height: 1.5;
+      margin: 0;
+      margin-bottom: 20px;
+      order: 2;
+
+      @media (min-width: $desktop-breakpoint) {
+        margin-bottom: 0;
+      }
+    }
+    .article-item__date {
+      color: $dark-gray;
+      font-size: $font-size-small;
+      margin: 0;
+      margin-bottom: 10px;
+      order: 1;
+    }
+  }
+}

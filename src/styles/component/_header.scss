@@ -6,4 +6,11 @@
 .header__title {
   margin: 0;
   font-size: $font-size-xLarge;
+  font-family: 'Dancing Script', cursive;
+}
+
+.header-alert {
+  color: $brown;
+  background-color: $yellow;
+  margin: 0;
 }
