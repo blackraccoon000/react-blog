@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { googleLogin, login, logout } from "../actions/authActions"
+import { login, logout } from "../actions/authActions"
 import { firebase, googleAuthProvider } from "../firebase/firebase"
 import { NavLink } from "react-router-dom"
 
