@@ -6,22 +6,16 @@ import getVisibleBlogData from "../selectors/getVisibleBlogData"
 
 const Home = (props) => {
   return (
-    <div>
-      <div className="content-container">
-        { props.isAuthenticated ?
-          props.blogData.map(note => {
-            return (
-              <Link key={note.id} className="note-list-item" to={`/edit/${note.id}`}>
-                <ArticleNote {...note} />
-              </Link>
-            )
-          })
+    <div className="content-container">
+      { props.blogData.map(note => {
+          return props.isAuthenticated ?
+          <Link key={`link_${note.id}`} to={`/edit/${note.id}`}>
+            <ArticleNote key={note.id} {...note} />
+          </Link>
           :
-          props.blogData.map(note => {
-            return <ArticleNote key={note.id} {...note} />
-          })
-        }
-      </div>
+          <ArticleNote key={note.id} {...note} />
+        })
+      }
     </div>
   )
 }

@@ -21,6 +21,7 @@ class CreateNote extends React.Component {
       images:[],
       imgFlag:false
     }
+    console.log(this.state)
   }
   titleInput = (e) => {
     const title = e.target.value
@@ -70,6 +71,7 @@ class CreateNote extends React.Component {
     e.preventDefault()
     const uid = process.env.FIREBASE_LOGIN_UID
     const id = this.state.id
+    console.log(uid,id)
     const updates = {
       title:this.state.title,
       note: this.state.note,

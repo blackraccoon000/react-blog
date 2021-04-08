@@ -83,6 +83,23 @@
       padding: 0;
       width: 500px;
     }
+
+    .article-item__imgDiv {
+      align-items: center;
+      background-color: black;
+      color: white;
+      display: flex;
+      height: 300px;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 500px;
+
+      // .article-item__imgDiv__p {
+
+      // }
+    }
   }
 
   .article-item__box {

@@ -13,7 +13,11 @@ class NavMenu extends React.Component {
     .then(result => {
       const uid = process.env.FIREBASE_LOGIN_UID
       if(result.user.uid === uid) {
-        this.props.getUid(result.user.uid)
+        const info = {
+          uid:result.user.uid,
+          message:"SignInに成功しました。"
+        }
+        this.props.getUid(info)
       }
     })
     .catch(error => console.log("SignInに失敗しました:",error))
@@ -21,7 +25,7 @@ class NavMenu extends React.Component {
   onSignOut = () => {
     firebase.auth().signOut()
     .then(_ => {
-      this.props.releaseUid()
+      this.props.releaseUid("SignOutに成功しました。")
     })
   }
   render() {
@@ -29,16 +33,15 @@ class NavMenu extends React.Component {
       <div className="navMenu">
         <ul data-testid="navMenuBar">
           <li><NavLink activeClassName="is-active" to="/" data-testid="HomeLink">Home</NavLink></li>
-          <li><NavLink activeClassName="is-active" to="/dashboard" data-testid="DashboardLink">Dashboard</NavLink></li>
           <li><NavLink activeClassName="is-active" to="/create" data-testid="CreateLink">Create</NavLink></li>
         </ul>
         { this.props.isAuthenticated ?
           <button className="google button button--login" onClick={this.onSignOut}>
-            <i className="fi-social-google-plus"></i> Sign Out
+            Sign Out
           </button>
           :
           <button className="google button button--login" onClick={this.onSignIn}>
-            <i className="fi-social-google-plus"></i> Sign In
+            Sign In
           </button>
         }
       </div>
@@ -51,8 +54,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getUid: (uid) => dispatch(login(uid)),
-  releaseUid: () => dispatch(logout())
+  getUid: (info) => dispatch(login(info)),
+  releaseUid: (message) => dispatch(logout(message))
 })
 
 export default connect( mapStateToProps, mapDispatchToProps )( NavMenu )

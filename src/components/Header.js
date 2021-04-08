@@ -27,7 +27,7 @@ class Header extends React.Component {
         </header>
         <div className="header-alert">
           <div className="content-container">
-            { this.props.isAuthenticated && "sign in now" }
+            { this.props.message && this.props.message }
           </div>
         </div>
       </div>
@@ -36,7 +36,8 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: !!state.auth.uid
+  isAuthenticated: !!state.auth.uid,
+  message: state.auth.message
 })
 
 export { Header }

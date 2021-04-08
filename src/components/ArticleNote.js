@@ -4,7 +4,17 @@ import { DateTime } from "luxon"
 const ArticleNote = (props) => {
   return (<div className="article-item">
     <figure className="article-item__photo">
-      <img className="article-item__img" src={props.link} alt="dog"/>
+      { props.link ?
+        <img
+          className="article-item__img"
+          src={props.link}
+          alt="dog"
+        />
+      :
+        <div className="article-item__imgDiv">
+          <p className="article-item__imgDiv__p">No Image</p>
+        </div>
+      }
     </figure>
     <div className="article-item__box">
       <h3 className="article-item__title">{props.title}</h3>

@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { googleLogin, login, logout } from "../actions/authActions"
+import { login, logout } from "../actions/authActions"
 import { firebase, googleAuthProvider } from "../firebase/firebase"
 
 class LoginPage extends React.Component {
@@ -10,7 +10,18 @@ class LoginPage extends React.Component {
   onSignIn = () => {
     firebase.auth().signInWithPopup(googleAuthProvider)
     .then(result => {
-      this.props.getUid(result.user.uid)
+      const uid = process.env.FIREBASE_LOGIN_UID
+      if(result.user.uid === uid) {
+        // this.props.getUid(result.user.uid,"Google認証 / App認証に成功しました。")
+        const info = {
+          uid:result.user.uid,
+          error:"Success"
+        }
+        // this.props.getUid(result.user.uid,"Success")
+        this.props.getUid(info)
+      } else {
+        this.props.getUid("","Google認証に成功しましたが権限がありません。")
+      }
     })
   }
   onSignOut = () => {
@@ -48,11 +59,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // googleLoginD: () => {
-  //   console.log("bbbb")
-  //   dispatch(googleLogin())
-  // },
-  getUid: (uid) => dispatch(login(uid)),
+  // getUid: (uid) => dispatch(login(uid)),
+  getUid: (info) => dispatch(login(info)),
   releaseUid: () => dispatch(logout())
 })
 

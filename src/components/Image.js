@@ -1,15 +1,12 @@
 import React from "react"
-import { connect } from "react-redux"
 import axios from "axios"
 import Spinner from "../img/spinner.png"
-import { tempTitle, tempNote, tempLink, tempClear } from "../actions/tempActions"
 
 class Image extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       images: [],
-      imgSelect: undefined,
     }
   }
   componentDidMount() {
@@ -36,10 +33,7 @@ class Image extends React.Component {
                   key={v.toString()}
                   src={v}
                   className="imgList"
-                  // onClick={this.imgSelect}
-                  onClick={(e)=>console.log(e.target.src)}
                   onClick={this.props.linkInput}
-                  onLoad={()=> console.log("a")}
                   style={imageStyle}
                 />
               )
@@ -50,20 +44,4 @@ class Image extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    imgSelect : state.imgSelect
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    tempLinkD: (link) => {
-      console.log(link)
-      dispatch(tempLink(link))
-    }
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Image)
-export { Image }
+export default Image

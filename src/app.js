@@ -19,6 +19,7 @@ import getVisibleBlogData from "./selectors/getVisibleBlogData"
 store.subscribe(()=>{
   const state = store.getState()
   console.log("all ",state)
+  // state.auth.message
 })
 
 // データの取得
@@ -37,8 +38,21 @@ database.ref(`users/${uid}`)
 
 // ログインの確認
 firebase.auth().onAuthStateChanged(user=>{
-  if(user.uid === uid) {
-    store.dispatch(login(user.uid))
+  if(user) {
+    if(user.uid === uid) {
+      const info = {
+        uid:user.uid,
+        message:"user認証に成功しました"
+      }
+      store.dispatch(login(info))
+    } else {
+      const info = {
+        uid:"",
+        message:"google認証に成功していますが、userではありません。ログアウトします。"
+      }
+      store.dispatch(login(info))
+      firebase.auth().signOut()
+    }
   } else {
     console.log("No Sign In")
   }
