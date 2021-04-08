@@ -15,9 +15,6 @@ import { setText, sortByDate, sortByText, setStartDate, setEndDate,
   setSqueezeNum, sortOrderAscending, sortOrderDescending } from "./actions/filterActions"
 import { createDataOne, createDataTwo, createDataThree, createDataFour, createDataFive } from "./tests/fixtures/createData"
 import getVisibleBlogData from "./selectors/getVisibleBlogData"
-// import axios from "./playground/test-axios"
-// import blogData from "./tests/fixtures/blogNoteSample"
-// import "./playground/arraySample"
 
 store.subscribe(()=>{
   const state = store.getState()
@@ -40,7 +37,7 @@ database.ref(`users/${uid}`)
 
 // ログインの確認
 firebase.auth().onAuthStateChanged(user=>{
-  if(user) {
+  if(user.uid === uid) {
     store.dispatch(login(user.uid))
   } else {
     console.log("No Sign In")

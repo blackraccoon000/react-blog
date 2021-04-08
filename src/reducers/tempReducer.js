@@ -1,6 +1,7 @@
 const tempState = {
   title:"",
-  note:""
+  note:"",
+  link:""
 }
 
 const tempReducer = (state = tempState, action) => {
@@ -8,17 +9,24 @@ const tempReducer = (state = tempState, action) => {
     case "TEMP_TITLE":
       return {
         title: action.title,
-        note: state.note
+        note: state.note,
+        link: state.link
       }
     case "TEMP_NOTE":
       return {
         title: state.title,
-        note: action.note
+        note: action.note,
+        link: state.link
+      }
+    case "TEMP_LINK":
+      return {
+        link: action.link
       }
     case "TEMP_CLEAR":
       return {
-        title: action.title,
-        note: action.note
+        title: state.title,
+        note: state.note,
+        link: state.link
       }
     default:
       return state

@@ -2,10 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import { DateTime } from "luxon";
 import { createBlog, removeBlog, editBlog, firebaseAddBlog } from "../actions/blogActions"
-import { Image } from "./Image"
+import Image from "./Image"
 import database from "../firebase/firebase"
-import axios from "axios"
-
 
 class CreateNote extends React.Component {
   constructor(props){
@@ -13,34 +11,16 @@ class CreateNote extends React.Component {
     const id = props.match.params.id && props.match.params.id
     const title = props.findData.title && props.findData.title
     const note = props.findData.note && props.findData.note
+    const link = props.findData.link && props.findData.link
     this.state = {
       id,
       title,
       note,
       error:"",
-      link:undefined,
-      images:[]
+      link,
+      images:[],
+      imgFlag:false
     }
-    const arr = [...Array(10)].map((_, i) => i);
-    const url = "https://dog.ceo/api/breeds/image/random"
-    arr.map(_ => axios.get(url)
-      .then(res => {
-        const ary = this.state.images
-        this.setState(() => {
-          images:ary.push(res.data.message)
-        })
-      })
-      .catch(error=>console.log(error))
-    )
-    axios.get(url)
-      .then(res => {
-        // const ary = this.state.images
-        // this.setState(() => {
-        //   images:ary.push(res.data.message)
-        // })
-        console.log(res)
-      })
-      .catch(error=>console.log(error))
   }
   titleInput = (e) => {
     const title = e.target.value
@@ -50,17 +30,21 @@ class CreateNote extends React.Component {
     const note = e.target.value
     this.setState(()=>({ note }))
   }
+  linkInput = (e) => {
+    const link = e.target.src
+    this.setState(()=>({ link }))
+  }
   submit = (e) => {
     e.preventDefault()
-    const { id, title, note } = this.state
+    const { id, title, note, link } = this.state
     if( title==="" || note==="" ) {
       this.setState(()=>({ error: "titleとnoteに入力してください" }))
     } else {
       if(id) {
-        this.props.editBlogD(id, { title, note })
+        this.props.editBlogD(id, { title, note, link })
         this.firebaseEdit(e)
       } else {
-        this.props.createBlogD({ title, note })
+        this.props.createBlogD({ title, note, link })
         this.firebaseAdd(e)
       }
       this.props.history.push("/")
@@ -77,6 +61,7 @@ class CreateNote extends React.Component {
     database.ref(`users/${uid}/`).push({
       title: this.state.title,
       note: this.state.note,
+      link: this.state.link,
       createdAt: DateTime.now().ts
     }).then(_ => console.log("success"))
     .catch(error => console.log(error))
@@ -88,6 +73,7 @@ class CreateNote extends React.Component {
     const updates = {
       title:this.state.title,
       note: this.state.note,
+      link: this.state.link,
       updatedAt: DateTime.now().ts
     }
     database.ref(`users/${uid}/${id}`).update(updates)
@@ -105,16 +91,12 @@ class CreateNote extends React.Component {
       console.log("success")
     })
   }
-  selectImage = (e) => {
-    e.preventDefault()
-    const link = e.target.src
-    this.setState(() => ({ link }))
-  }
   render() {
     return (
     <div className="content-container">
       {this.state.error && <p className="form__error">{this.state.error}</p>}
       <div>
+        <img src={this.state.link} alt="" className="sampleImg"/>
         <form onSubmit={this.submit}>
           <label
             htmlFor="title"
@@ -146,14 +128,12 @@ class CreateNote extends React.Component {
           {this.state.id && <button className="remove-btn" onClick={this.remove}
             disabled={!!!this.props.uid}
           >remove</button>}
-          {/* <button onClick={this.firebaseAdd} disabled={!!!this.props.uid}>firebase Add</button>
-          <button onClick={this.firebaseEdit} disabled={!!!this.props.uid}>firebase Edit</button>
-          <button onClick={this.firebaseRemove} disabled={!!!this.props.uid}>firebase Remove</button> */}
         </form>
-        {/* { this.state.images.map((v,i)=>{
-          // console.log(v)
-          return <img key={v} src={this.state.images[i]} className="sampleImg" onClick={this.selectImage}/>
-        })} */}
+        <button onClick={()=>{
+          console.log(this.state)
+          this.setState({imgFlag:!this.state.imgFlag})
+        }}>ImageFlag</button>
+        { this.state.imgFlag && <Image linkInput={this.linkInput}/>}
       </div>
     </div>
     )
@@ -162,12 +142,14 @@ class CreateNote extends React.Component {
 
 const mapStateToProps = (state,ownProps) =>{
   const findData = state.blogData.find(note => note.id === ownProps.match.params.id)
+  console.log("get findData:",findData)
   return {
     findData: findData ? findData : {
       title:"",
-      note:""
+      note:"",
+      link:""
     },
-    uid: state.auth.uid
+    uid: state.auth.uid,
   }
 }
 

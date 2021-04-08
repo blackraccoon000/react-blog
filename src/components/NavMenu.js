@@ -11,8 +11,12 @@ class NavMenu extends React.Component {
   onSignIn = () => {
     firebase.auth().signInWithPopup(googleAuthProvider)
     .then(result => {
-      this.props.getUid(result.user.uid)
+      const uid = process.env.FIREBASE_LOGIN_UID
+      if(result.user.uid === uid) {
+        this.props.getUid(result.user.uid)
+      }
     })
+    .catch(error => console.log("SignInに失敗しました:",error))
   }
   onSignOut = () => {
     firebase.auth().signOut()

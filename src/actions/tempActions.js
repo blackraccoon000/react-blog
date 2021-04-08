@@ -12,6 +12,13 @@ const tempNote = (note = "") => {
   }
 }
 
+const tempLink = (link = "") => {
+  return {
+    type:"TEMP_LINK",
+    link
+  }
+}
+
 const tempClear = () => {
   return {
     type:"TEMP_CLEAR",
@@ -20,4 +27,4 @@ const tempClear = () => {
   }
 }
 
-export { tempTitle, tempNote, tempClear }
+export { tempTitle, tempNote, tempLink, tempClear }

@@ -1,6 +1,8 @@
 import React from "react"
+import { connect } from "react-redux"
 import axios from "axios"
 import Spinner from "../img/spinner.png"
+import { tempTitle, tempNote, tempLink, tempClear } from "../actions/tempActions"
 
 class Image extends React.Component {
   constructor(props) {
@@ -21,11 +23,6 @@ class Image extends React.Component {
       .catch(error=>console.log(error))
     )
   }
-  imgSelect = (e) => {
-    this.setState({
-      imgSelect:e.target.src
-    })
-  }
   render() {
     return (
       <div className="content-container">
@@ -39,27 +36,34 @@ class Image extends React.Component {
                   key={v.toString()}
                   src={v}
                   className="imgList"
-                  onClick={this.imgSelect}
+                  // onClick={this.imgSelect}
+                  onClick={(e)=>console.log(e.target.src)}
+                  onClick={this.props.linkInput}
                   onLoad={()=> console.log("a")}
                   style={imageStyle}
                 />
               )
             })
           }
-
-        { this.state.imgSelect && (
-          <div>
-            <p>Selected Image</p>
-            <img
-              src={this.state.imgSelect}
-              className="imgList"
-            />
-            <p>{this.state.imgSelect}</p>
-          </div>
-        )}
       </div>
     )
   }
 }
 
-export default Image
+const mapStateToProps = (state) => {
+  return {
+    imgSelect : state.imgSelect
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    tempLinkD: (link) => {
+      console.log(link)
+      dispatch(tempLink(link))
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Image)
+export { Image }

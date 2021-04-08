@@ -4,12 +4,7 @@ import { DateTime } from "luxon"
 const ArticleNote = (props) => {
   return (<div className="article-item">
     <figure className="article-item__photo">
-      <img className="article-item__img" src={props.img} alt="dog"
-        // onClick={(e)=>{
-        //   e.preventDefault()
-        //   console.log("click image: ",props.img)
-        // }
-      />
+      <img className="article-item__img" src={props.link} alt="dog"/>
     </figure>
     <div className="article-item__box">
       <h3 className="article-item__title">{props.title}</h3>
