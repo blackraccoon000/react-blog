@@ -171,6 +171,7 @@ const mapDispatchToProps = (dispatch) => ({
   createBlogD: (createData) => dispatch(createBlog(createData)),
   editBlogD: (id,updates) => dispatch(editBlog(id,updates)),
   removeBlogD: (id) => dispatch(removeBlog(id)),
+  messageFlagD: () => dispatch(messageFlag())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateNote)

@@ -9,6 +9,11 @@ export default (state = {uid:""}, action) => {
       return {
         message:action.message
       }
+    case "UPDATE_MESSAGE":
+      return {
+        ...state,
+        message: action.message
+      }
     default:
       return state
   }

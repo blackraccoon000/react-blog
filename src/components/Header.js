@@ -2,12 +2,13 @@ import React from "react"
 import { connect } from "react-redux"
 import { Link }  from "react-router-dom"
 import NavMenu from "./NavMenu"
+import { updateMessage } from "../actions/authActions"
 import NoteListFilters from "./NoteListFilters"
 class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      flag:false
+      flag:false,
     }
   }
   onClickBtn = () => {
@@ -32,7 +33,15 @@ class Header extends React.Component {
         </header>
         <div className="header-alert">
           <div className="content-container">
-            { this.props.message && this.props.message }
+            { this.props.message && (
+              <div className="alert-message__area">
+                <p className="alert-message">{this.props.message}</p>
+                <button
+                  className="alert-btn"
+                  onClick={()=>this.props.updateMessageD("")}
+                >x</button>
+              </div>
+            ) }
           </div>
         </div>
       </div>
@@ -45,5 +54,9 @@ const mapStateToProps = state => ({
   message: state.auth.message
 })
 
+const mapDispatchToProps = (dispatch) => ({
+  updateMessageD:(str) => dispatch(updateMessage(str))
+})
+
 export { Header }
-export default connect( mapStateToProps )( Header )
+export default connect( mapStateToProps, mapDispatchToProps )( Header )

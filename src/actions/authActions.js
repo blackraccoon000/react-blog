@@ -26,4 +26,9 @@ const googleLogout = () => {
   }
 }
 
-export { login, logout, googleLogin, googleLogout }
+const updateMessage = (message) => ({
+  type: "UPDATE_MESSAGE",
+  message
+})
+
+export { login, logout, googleLogin, googleLogout, updateMessage }
