@@ -1,0 +1,52 @@
+.article-title {
+  color: #1a7bbc;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 5px 20px;
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.article-post {
+  font-size: 12px;
+  list-style-type: none;
+  padding-inline-start: 20px;
+}
+
+.article-dateTime {
+  display: inline;
+  margin-right: 5px;
+}
+
+.article-comment-count {
+  display: inline;
+  margin-right: 5px;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 1);
+  border-style: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.test-body {
+  // background-color: #7ba7d9;
+  background-color: #f6f6f4;
+}
+
+.test-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.test-li {
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 10px;
+}

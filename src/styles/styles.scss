@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import './base/setting';
 @import './base/base';
+@import './component/materialui';
 @import './component/content-container';
 @import './component/header';
 @import './component/article';
 @import './component/note';
+@import './component/testArticle';
+@import './component/testHeader';

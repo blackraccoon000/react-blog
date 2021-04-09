@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute"
 import CreateNote from "../components/CreateNote"
 import Home from "../components/Home"
 import ImgLoad from "../playground/ImgLoad"
+import TestComp from "../components/TestComp"
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
       <PublicRoute path="/edit/:id" component={CreateNote} /> */}
       <PrivateRoute path="/create" component={CreateNote} exact={true} />
       <PrivateRoute path="/edit/:id" component={CreateNote} />
+      <Route path="/test" component={TestComp} />
     </Switch>
   )
 }
