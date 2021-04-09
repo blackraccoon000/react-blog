@@ -5,7 +5,7 @@ import selectValueFilterFn from "../selectors/selectValueFilterFn"
 
 const NoteListFilters = (props) => {
   return (
-  <div>
+  <div className="navFilter">
     <input type="text" defaultValue={props.filters.text}
       onChange={props.inputTextFilter}
       data-testid="textFilter"/>

@@ -19,6 +19,10 @@ const blogReducer = (state = blogReducerDefaultState, action) => {
           return blog
         }
       })
+    case "SET_BLOG_DATA":
+      return [
+        ...state, ...action.blogData
+      ]
     default:
       return state
   }

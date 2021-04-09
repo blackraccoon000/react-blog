@@ -1,0 +1,117 @@
+.note-container {
+  margin: 0 auto;
+  padding: 0 $m-size;
+  max-width: 60rem;
+}
+
+.edit-div {
+  border: 0.1px solid black;
+  margin-top: 20px;
+}
+
+.form-div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sampleImg {
+  height: 300px;
+  object-fit: cover;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.no-SampleImg {
+  align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0;
+  text-align: center;
+  width: 500px;
+}
+
+.label-title {
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.edit-title {
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  width: 500px;
+
+  &:focus {
+    border: 2px solid #ff9900;
+    z-index: 10;
+    outline: 0;
+  }
+}
+
+.label-body {
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.edit-body {
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.5;
+  padding: 10px;
+  width: 500px;
+
+  &:focus {
+    border: 2px solid #ff9900;
+    z-index: 10;
+    outline: 0;
+  }
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.save-btn {
+  margin: 10px;
+}
+
+.remove-btn {
+  margin: 10px;
+}
+
+.img-btn {
+  margin: 10px;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.imgList {
+  background-size: 100px, 75px;
+  background-repeat: no-repeat;
+  height: 75px;
+  object-fit: cover;
+  margin: 10px 0.5%;
+  width: 100px;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 16%;
+  }
+}

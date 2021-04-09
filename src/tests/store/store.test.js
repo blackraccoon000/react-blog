@@ -1,5 +1,4 @@
 import store from "../../store/store"
-import { v4 as uuidv4 } from "uuid" // Use mock
 import { setText } from "../../actions/filterActions"
 import { createBlog } from "../../actions/blogActions"
 import { createDataOne } from "../fixtures/createData"
@@ -23,7 +22,7 @@ it("create blogData => createDataOne", () => {
   store.dispatch(createBlog(createDataOne))
   expect(store.getState().blogData).toStrictEqual([{
     "createdAt": 1000,
-    "id": "some-short-v4-uuid-00", //use Mock
+    "id": "8f305df0-62b9-4768-9184-dcee36d71782", //use Mock
     "note": "1 create blog now one",
     "title": "first blog",
   }])
