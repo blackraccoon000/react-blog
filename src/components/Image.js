@@ -24,17 +24,18 @@ class Image extends React.Component {
     return (
       <div className="content-container">
           {
-            this.state.images.map(v => {
-              const imageStyle = {
-                backgroundImage: `url(${v}), url(${Spinner})`
-              }
+            this.state.images.map((v,i) => {
               return (
                 <img
                   key={v.toString()}
-                  src={v}
+                  src={Spinner}
+                  id={`img-list-num-${i}`}
                   className="imgList"
                   onClick={this.props.linkInput}
-                  style={imageStyle}
+                  onLoad={()=>{
+                    const getId = document.getElementById(`img-list-num-${i}`)
+                    getId.setAttribute("src",v)
+                  }}
                 />
               )
             })

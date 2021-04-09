@@ -1,7 +1,26 @@
+// .edit-div {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+
+.form-div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sampleImg {
+  height: 300px;
+  object-fit: cover;
+  width: 500px;
+}
+
 .label-title {
   display: inline-block;
   font-size: 16px;
   margin-top: 20px;
+  width: 500px;
 }
 
 .edit-title {
@@ -10,7 +29,7 @@
   font-size: 16px;
   line-height: 1.5;
   padding: 10px;
-  width: 100%;
+  width: 500px;
 
   &:focus {
     border: 2px solid #ff9900;
@@ -23,6 +42,7 @@
   display: inline-block;
   font-size: 16px;
   margin-top: 20px;
+  width: 500px;
 }
 
 .edit-body {
@@ -32,7 +52,7 @@
   height: 100%;
   line-height: 1.5;
   padding: 10px;
-  width: 100%;
+  width: 500px;
 
   &:focus {
     border: 2px solid #ff9900;
@@ -41,7 +61,21 @@
   }
 }
 
-.sampleImg {
+.btn-div {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
+.imgList {
+  background-size: 100px, 75px;
+  background-repeat: no-repeat;
+  height: 75px;
   object-fit: cover;
+  margin: 10px 0.5%;
   width: 100px;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 16%;
+  }
 }

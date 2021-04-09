@@ -71,7 +71,6 @@ class CreateNote extends React.Component {
     e.preventDefault()
     const uid = process.env.FIREBASE_LOGIN_UID
     const id = this.state.id
-    console.log(uid,id)
     const updates = {
       title:this.state.title,
       note: this.state.note,
@@ -97,9 +96,12 @@ class CreateNote extends React.Component {
     return (
     <div className="content-container">
       {this.state.error && <p className="form__error">{this.state.error}</p>}
-      <div>
-        <img src={this.state.link} alt="" className="sampleImg"/>
-        <form onSubmit={this.submit}>
+      <div className="edit-div">
+        <form
+          className="form-div"
+          onSubmit={this.submit}
+        >
+          <img src={this.state.link} alt="" className="sampleImg"/>
           <label
             htmlFor="title"
             className="label-title"
@@ -124,17 +126,21 @@ class CreateNote extends React.Component {
             value={this.state.note}
             data-testid={"note"}
           ></textarea>
-          <button className="save-btn"
-            disabled={!!!this.props.uid}
-          >save</button>
-          {this.state.id && <button className="remove-btn" onClick={this.remove}
-            disabled={!!!this.props.uid}
-          >remove</button>}
+          <div className="btn-div">
+            <button className="save-btn"
+              disabled={!!!this.props.uid}
+            >save</button>
+            {this.state.id && <button className="remove-btn" onClick={this.remove}
+              disabled={!!!this.props.uid}
+            >remove</button>}
+            <button
+              className="img-btn"
+              onClick={()=>{
+                this.setState({imgFlag:!this.state.imgFlag})
+              }}
+            >image</button>
+          </div>
         </form>
-        <button onClick={()=>{
-          console.log(this.state)
-          this.setState({imgFlag:!this.state.imgFlag})
-        }}>ImageFlag</button>
         { this.state.imgFlag && <Image linkInput={this.linkInput}/>}
       </div>
     </div>
