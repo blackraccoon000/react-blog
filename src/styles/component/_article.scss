@@ -1,3 +1,15 @@
+/**
+  article__main / article__sub
+
+  div> article-item
+    div> article-item__photo
+      img> article-item__img
+    div> article-item__box
+      div> article-item__title
+      div> article-item__text
+      div> article-item__date
+*/
+
 .article_box {
   background: #e9e7f3;
   flex-direction: column;
@@ -49,18 +61,6 @@
   width: 250px;
 }
 
-/**
-  article__main / article__sub
-
-  div> article-item
-    div> article-item__photo
-      img> article-item__img
-    div> article-item__box
-      div> article-item__title
-      div> article-item__text
-      div> article-item__date
-*/
-
 .article-item {
   background-color: #e9e7f3;
   display: flex;
@@ -95,10 +95,6 @@
       padding: 0;
       text-align: center;
       width: 500px;
-
-      // .article-item__imgDiv__p {
-
-      // }
     }
   }
 

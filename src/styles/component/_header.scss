@@ -3,14 +3,38 @@
   background-color: $blue;
 }
 
+.header__div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .header__title {
-  margin: 0;
+  display: inline-block;
   font-size: $font-size-xLarge;
   font-family: 'Dancing Script', cursive;
+  margin: 0;
+  margin-left: 20px;
+
+  .header__logo {
+    text-decoration: none;
+  }
 }
 
 .header-alert {
   color: $brown;
   background-color: $yellow;
   margin: 0;
+}
+
+.navBtn {
+  margin-right: 20px;
+}
+
+.navMenu {
+  margin-left: 20px;
+}
+
+.navFilter {
+  margin-left: 20px;
 }

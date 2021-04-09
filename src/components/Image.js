@@ -22,12 +22,12 @@ class Image extends React.Component {
   }
   render() {
     return (
-      <div className="content-container">
+      <div className="img-container">
           {
             this.state.images.map((v,i) => {
               return (
                 <img
-                  key={v.toString()}
+                  key={`${i}_${v.toString()}`}
                   src={Spinner}
                   id={`img-list-num-${i}`}
                   className="imgList"

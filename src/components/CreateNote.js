@@ -44,8 +44,7 @@ class CreateNote extends React.Component {
       if(id) {
         this.props.editBlogD(id, { title, note, link })
         this.firebaseEdit(e)
-      } else {
-        this.props.createBlogD({ title, note, link })
+      } else { // create
         this.firebaseAdd(e)
       }
       this.props.history.push("/")
@@ -64,7 +63,10 @@ class CreateNote extends React.Component {
       note: this.state.note,
       link: this.state.link,
       createdAt: DateTime.now().ts
-    }).then(_ => console.log("success"))
+    }).then(res => {
+      const { id=res.path.pieces_[2] , title, note, link } = this.state
+      this.props.createBlogD({ id, title, note, link })
+    })
     .catch(error => console.log(error))
   }
   firebaseEdit = (e) => {
@@ -94,14 +96,20 @@ class CreateNote extends React.Component {
   }
   render() {
     return (
-    <div className="content-container">
+    <div className="note-container">
       {this.state.error && <p className="form__error">{this.state.error}</p>}
       <div className="edit-div">
         <form
           className="form-div"
-          onSubmit={this.submit}
         >
-          <img src={this.state.link} alt="" className="sampleImg"/>
+          { this.state.link
+            ?
+            <img src={this.state.link} alt="" className="sampleImg"/>
+            :
+            <div className="no-SampleImg">
+              <p>No Image</p>
+            </div>
+          }
           <label
             htmlFor="title"
             className="label-title"
@@ -126,21 +134,19 @@ class CreateNote extends React.Component {
             value={this.state.note}
             data-testid={"note"}
           ></textarea>
-          <div className="btn-div">
-            <button className="save-btn"
-              disabled={!!!this.props.uid}
-            >save</button>
-            {this.state.id && <button className="remove-btn" onClick={this.remove}
-              disabled={!!!this.props.uid}
-            >remove</button>}
-            <button
-              className="img-btn"
-              onClick={()=>{
-                this.setState({imgFlag:!this.state.imgFlag})
-              }}
-            >image</button>
-          </div>
         </form>
+        <div className="btn-div">
+          <button className="save-btn" onClick={this.submit}>save</button>
+          {this.state.id &&
+          <button className="remove-btn" onClick={this.remove} >remove</button>
+          }
+          <button
+            className="img-btn"
+            onClick={()=>{
+              this.setState({imgFlag:!this.state.imgFlag})
+            }}
+          >image</button>
+        </div>
         { this.state.imgFlag && <Image linkInput={this.linkInput}/>}
       </div>
     </div>
