@@ -10,6 +10,8 @@ class Image extends React.Component {
     }
   }
   componentDidMount() {
+    axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
     const arr = [...Array(30)].map((_, i) => i);
     arr.map(_=> axios.get(`https://dog.ceo/api/breeds/image/random`)
       .then(res => {

@@ -14,8 +14,8 @@ const TestHeader = () => {
         </div>
         <div className="test-header__container--end">
           <span className="material-icons">face</span>
-          <p className="search">虫眼鏡</p>
-          <p className="notification">ベル</p>
+          <span className="material-icons">Search</span>
+          <span className="material-icons">Notifications</span>
         </div>
       </div>
     </div>

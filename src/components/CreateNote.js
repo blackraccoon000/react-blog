@@ -21,7 +21,7 @@ class CreateNote extends React.Component {
       images:[],
       imgFlag:false
     }
-    console.log(this.state)
+    // console.log(this.state)
   }
   titleInput = (e) => {
     const title = e.target.value
@@ -156,7 +156,7 @@ class CreateNote extends React.Component {
 
 const mapStateToProps = (state,ownProps) =>{
   const findData = state.blogData.find(note => note.id === ownProps.match.params.id)
-  console.log("get findData:",findData)
+  // console.log("get findData:",findData)
   return {
     findData: findData ? findData : {
       title:"",
