@@ -13,8 +13,8 @@ const AppRoutes = () => {
     <Switch>
       <PublicRoute path="/" component={Home} exact={true} />
       {/* <PublicRoute path="/imgLoad" component={ImgLoad} /> */}
-      {/* <PublicRoute path="/create" component={CreateNote} exact={true} />
-      <PublicRoute path="/edit/:id" component={CreateNote} /> */}
+      <PublicRoute path="/create" component={CreateNote} exact={true} />
+      <PublicRoute path="/edit/:id" component={CreateNote} />
       {/* <PrivateRoute path="/create" component={CreateNote} exact={true} />
       <PrivateRoute path="/edit/:id" component={CreateNote} />
       <Route path="/test" component={TestComp} /> */}
