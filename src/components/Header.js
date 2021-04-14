@@ -25,9 +25,9 @@ class Header extends React.Component {
             <div className="site-header__container--start">
               <div className="site-header__title">
                 <h1 className="site-header__title--logo" rel="home">
-                  <a className="site-header__title--link" href="#">
+                  <Link to="/" className="site-header__title--link">
                     ロゴ
-                  </a>
+                  </Link>
                 </h1>
               </div>
             </div>
@@ -35,7 +35,7 @@ class Header extends React.Component {
               <div className="site-header__sp-nav">
                 <Hamburger
                   // https://hamburger-react.netlify.app/
-                  size={32}
+                  size={22} // default 32
                   color="#282828"
                   distance="sm"
                   label="Show menu"
@@ -70,16 +70,16 @@ class Header extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   isAuthenticated: !!state.auth.uid,
-//   message: state.auth.message
-// })
+const mapStateToProps = (state) => ({
+  isAuthenticated: !!state.auth.uid,
+  message: state.auth.message,
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-//   updateMessageD:(str) => dispatch(updateMessage(str))
-// })
+const mapDispatchToProps = (dispatch) => ({
+  updateMessageD: (str) => dispatch(updateMessage(str)),
+});
 
-// export { Header }
-// export default connect( mapStateToProps, mapDispatchToProps )( Header )
+export { Header };
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
-export default Header;
+// export default Header;
