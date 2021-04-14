@@ -1,3 +1,91 @@
+.site-header {
+  background: #f9f8f8;
+  border-bottom: 1px solid #e5e5e5;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.site-header__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &--start {
+    padding: 8px;
+  }
+
+  &--end {
+    padding: 8px;
+  }
+}
+
+.site-header__title {
+  align-items: center;
+  background-color: burlywood;
+  border-radius: 30px;
+  display: flex;
+  height: 61px;
+  justify-content: center;
+  margin: 0;
+  width: 61px;
+
+  &--logo {
+    font-size: 18px;
+  }
+
+  &--link {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// width 0px - 599pxまで表示
+.site-header__sp-nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+
+  &--menu {
+    color: #282828;
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+// width 600pxから表示
+.site-header__nav {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+
+  &--ul {
+    display: flex;
+    list-style: none;
+  }
+
+  &--li {
+    font-size: 13px;
+    line-height: 22px;
+    border: none;
+
+    & a {
+      border-left: 2px solid #9b9898;
+      color: #282828;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
+// 以前作成した内容
 .header {
   color: $white;
   background-color: $blue;
