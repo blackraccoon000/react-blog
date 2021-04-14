@@ -79,6 +79,70 @@
     position: relative;
     top: -12px;
   }
+
+  &--open {
+    background: #373a47;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    z-index: 100;
+
+    & ul {
+      list-style: none;
+      margin: 20px 0 0 0;
+
+      & li {
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+    & a {
+      color: #b8b7ad;
+
+      &.is-active {
+        color: red;
+      }
+    }
+  }
+
+  &--cross-button-div {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    top: 8px;
+  }
+
+  &--button {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.site-header__cross-button {
+  &--b1-cross {
+    background: #bdc3c7;
+    position: absolute;
+    width: 3px;
+    height: 14px;
+    transform: rotate(45deg);
+  }
+
+  &--b2-cross {
+    background: #bdc3c7;
+    position: absolute;
+    width: 3px;
+    height: 14px;
+    transform: rotate(-45deg);
+  }
 }
 
 // width 600pxから表示
