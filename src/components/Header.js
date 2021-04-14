@@ -2,22 +2,20 @@ import React from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import NavMenu from './NavMenu';
+import { Link, NavLink } from 'react-router-dom';
 import { updateMessage } from '../actions/authActions';
 import NoteListFilters from './NoteListFilters';
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      flag: false,
+      isOpen: false,
     };
   }
-  onClickBtn = () => {
-    this.setState({ flag: !this.state.flag });
+  setOpen = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
-    const { isOpen, setOpen } = false;
     return (
       <div>
         <header className="site-header">
@@ -39,8 +37,8 @@ class Header extends React.Component {
                   color="#282828"
                   distance="sm"
                   label="Show menu"
-                  toggled={isOpen}
-                  toggle={setOpen}
+                  toggled={this.state.isOpen}
+                  toggle={this.setOpen}
                 />
                 <label className="site-header__sp-nav--menu">MENU</label>
               </div>
@@ -65,6 +63,34 @@ class Header extends React.Component {
             </div>
           </div>
         </header>
+        {this.state.isOpen && (
+          <div className="site-header__sp-nav--open">
+            <div className="site-header__sp-nav--cross-button-div">
+              <button
+                className="site-header__sp-nav--button"
+                onClick={this.setOpen}
+              >
+                Close Menu
+              </button>
+              <span className="site-header__cross-button">
+                <span className="site-header__cross-button--b1-cross"></span>
+                <span className="site-header__cross-button--b2-cross"></span>
+              </span>
+            </div>
+            <ul>
+              <li>
+                <NavLink activeClassName="is-active" to="/" exact>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="is-active" to="/create">
+                  Create
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     );
   }
