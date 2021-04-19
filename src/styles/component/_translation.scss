@@ -1,0 +1,90 @@
+.translate {
+  background: rgba(18, 132, 129, 0.8);
+  height: 80px;
+  position: absolute;
+  transition-duration: 1s;
+  width: 0px;
+  opacity: 0;
+
+  &.move {
+    opacity: 1;
+    width: 150px;
+  }
+}
+
+.flag-button {
+  height: 20px;
+  left: 0px;
+  position: relative;
+  transition-duration: 1s;
+  width: 20px;
+
+  &.move {
+    left: 125px;
+  }
+
+  & button {
+    background: transparent;
+    border: none;
+    font-size: 0;
+    height: 100%;
+    outline: none;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+  }
+
+  & .cross-bar {
+    position: absolute;
+    left: 10px;
+
+    &::before {
+      background: black;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      transform: rotate(45deg);
+      transition-duration: 1s;
+      width: 3px;
+    }
+
+    &::after {
+      background: black;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      transform: rotate(-45deg);
+      transition-duration: 1s;
+      width: 3px;
+    }
+  }
+
+  & .cross-bar--modify {
+    position: absolute;
+    left: 10px;
+
+    &::before {
+      background: white;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      transform: rotate(225deg);
+      transition-duration: 1s;
+      width: 3px;
+    }
+
+    &::after {
+      background: white;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      transform: rotate(-225deg);
+      transition-duration: 1s;
+      width: 3px;
+    }
+  }
+}

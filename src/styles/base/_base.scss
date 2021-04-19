@@ -7,11 +7,12 @@ html {
 }
 
 body {
+  background: $white;
   color: $black;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
-  background: $white;
   line-height: 1.6;
+  margin: 0;
 }
 
 button {
