@@ -19,16 +19,40 @@ Normal.args = {
   flag: false,
 };
 
-export const Before = Template.bind({});
-Before.args = {
+export const BeforeColor = Template.bind({});
+BeforeColor.args = {
   crossSpanColor: Color.PINK,
   crossSpanAfterColor: Color.DEEP_PURPLE,
   flag: false,
 };
 
-export const After = Template.bind({});
-After.args = {
+export const AfterColor = Template.bind({});
+AfterColor.args = {
   crossSpanColor: Color.PINK,
   crossSpanAfterColor: Color.DEEP_PURPLE,
   flag: true,
+};
+
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  crossSpanColor: Color.PINK,
+  crossSpanAfterColor: Color.DEEP_PURPLE,
+  flag: false,
+  size: 'small',
+};
+
+export const SizeMedium = Template.bind({});
+SizeMedium.args = {
+  crossSpanColor: Color.PINK,
+  crossSpanAfterColor: Color.DEEP_PURPLE,
+  flag: false,
+  size: 'medium',
+};
+
+export const SizeLarge = Template.bind({});
+SizeLarge.args = {
+  crossSpanColor: Color.PINK,
+  crossSpanAfterColor: Color.DEEP_PURPLE,
+  flag: false,
+  size: 'large',
 };

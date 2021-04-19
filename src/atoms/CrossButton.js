@@ -2,12 +2,13 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Color from '../styles/color';
+import { crossButtonSize } from '../styles/button-size';
 
 const CrossDiv = styled.div`
-  height: 20px;
+  height: ${(props) => props.divSize}px;
   position: relative;
   transition-duration: 1s;
-  width: 20px;
+  width: ${(props) => props.divSize}px;
 `;
 
 const TransparentButton = styled.button`
@@ -19,7 +20,6 @@ const TransparentButton = styled.button`
   position: absolute;
   padding: 0;
   width: 100%;
-  z-index: 1;
 `;
 
 const MixinHamburgerIconPseudo = css`
@@ -27,26 +27,32 @@ const MixinHamburgerIconPseudo = css`
     props.flag ? props.crossSpanAfterColor : props.crossSpanColor};
   content: '';
   display: inline-block;
-  height: 18px;
+  height: ${(props) => props.spanHeight}px;
   position: absolute;
   transform: rotate(0deg);
   transition-duration: 1s;
-  width: 3px;
+  width: ${(props) => props.spanWidth}px;
 `;
 
 const HamburgerIcon = styled.span`
+  background-color: ${(props) =>
+    props.flag ? 'transparent' : props.crossSpanColor};
+  height: ${(props) => (props.flag ? 'none' : props.spanHeight)}px;
   position: absolute;
-  left: 8px;
-  top: 0px;
+  transition-duration: 1s;
+  left: ${(props) => props.spanPositionLeft}px;
+  top: ${(props) => props.spanPositionTop}px;
+  width: ${(props) => (props.flag ? 0 : props.spanWidth)}px;
 
   &::before {
     ${MixinHamburgerIconPseudo}
-    transform: ${(props) => (props.flag ? 'rotate(45deg)' : 'rotate(225deg)')};
+    top: ${(props) => (props.flag ? 0 : props.spanBeforeTop)}px;
+    transform: ${(props) => (props.flag ? 'rotate(225deg)' : 'rotate(0deg)')};
   }
   &::after {
     ${MixinHamburgerIconPseudo}
-    transform: ${(props) =>
-      props.flag ? 'rotate(-45deg)' : 'rotate(-225deg)'};
+    top: ${(props) => (props.flag ? 0 : props.spanAfterTop)}px;
+    transform: ${(props) => (props.flag ? 'rotate(-225deg)' : 'rotate(0deg)')};
   }
 `;
 
@@ -55,16 +61,26 @@ const CrossButton = ({
   crossSpanAfterColor,
   onClickMe,
   flag,
+  size,
 }) => {
+  const iconSize =
+    size == 'small'
+      ? crossButtonSize.small
+      : size == 'medium'
+      ? crossButtonSize.medium
+      : size == 'large'
+      ? crossButtonSize.large
+      : '';
   return (
-    <CrossDiv>
+    <CrossDiv {...iconSize}>
       <TransparentButton onClick={onClickMe}>
-        ${flag} ? "開く" : "閉じる"
+        {flag ? '開く' : '閉じる'}
       </TransparentButton>
       <HamburgerIcon
         crossSpanColor={crossSpanColor}
         crossSpanAfterColor={crossSpanAfterColor}
         flag={flag}
+        {...iconSize}
       />
     </CrossDiv>
   );
@@ -87,11 +103,16 @@ CrossButton.propTypes = {
    * 押下判定を取る。未押下時false / 押下時true
    */
   flag: PropTypes.bool,
+  /**
+   * CrossButtonのサイズ
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 CrossButton.defaultProps = {
   crossSpanColor: Color.RED,
   crossSpanAfterColor: Color.BLUE,
+  size: 'small',
   flag: false,
 };
 
