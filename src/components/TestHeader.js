@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react';
+import Translation from './Translation';
 
 const TestHeader = () => {
   return (
@@ -22,7 +23,7 @@ const TestHeader = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TestHeader
+export default TestHeader;
