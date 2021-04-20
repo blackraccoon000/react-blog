@@ -9,6 +9,7 @@ const CrossDiv = styled.div`
   position: relative;
   transition-duration: 1s;
   width: ${(props) => props.divSize}px;
+  z-index: 110;
 `;
 
 const TransparentButton = styled.button`
@@ -64,11 +65,11 @@ const CrossButton = ({
   size,
 }) => {
   const iconSize =
-    size == 'small'
+    size === 'small'
       ? crossButtonSize.small
-      : size == 'medium'
+      : size === 'medium'
       ? crossButtonSize.medium
-      : size == 'large'
+      : size === 'large'
       ? crossButtonSize.large
       : '';
   return (
