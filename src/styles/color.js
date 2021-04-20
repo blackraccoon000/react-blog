@@ -23,4 +23,5 @@ export default {
   GREY: '#F5F5F5',
   BLUE_GREY: '#CFD8DC',
   BLACK: '#000000',
+  WHITE: '#FFFFFF',
 };

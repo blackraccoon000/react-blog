@@ -12,12 +12,7 @@ export default {
 
 const Template = (args) => <CrossButton {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
-  crossSpanColor: Color.RED,
-  crossSpanAfterColor: Color.BLUE,
-  flag: false,
-};
+export const Default = Template.bind({});
 
 export const BeforeColor = Template.bind({});
 BeforeColor.args = {
