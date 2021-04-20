@@ -7,6 +7,7 @@ const crossButtonSize = {
     spanPositionTop: 8,
     spanBeforeTop: -6,
     spanAfterTop: 6,
+    top: -10,
   },
   medium: {
     divSize: 30,
@@ -16,6 +17,7 @@ const crossButtonSize = {
     spanPositionTop: 13,
     spanBeforeTop: -9,
     spanAfterTop: 9,
+    top: -15,
   },
   large: {
     divSize: 40,
@@ -25,6 +27,7 @@ const crossButtonSize = {
     spanPositionTop: 17,
     spanBeforeTop: -12,
     spanAfterTop: 12,
+    top: -20,
   },
 };
 

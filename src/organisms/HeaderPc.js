@@ -11,7 +11,7 @@ const SiteHeader = styled.div`
   border-bottom: 1px solid #e5e5e5;
   left: 0;
   top: 0;
-  position: fixed;
+  position: relative;
   width: 100%;
 `;
 
@@ -25,7 +25,7 @@ const HeaderContainer = styled.div`
   padding: 10px;
 `;
 
-const Header = ({
+const HeaderPc = ({
   bgColor,
   fontColor,
   size,
@@ -51,7 +51,7 @@ const Header = ({
   );
 };
 
-Header.propTypes = {
+HeaderPc.propTypes = {
   bgColor: PropTypes.string,
   fontColor: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -62,7 +62,7 @@ Header.propTypes = {
   headerColor: PropTypes.string,
 };
 
-Header.defaultProps = {
+HeaderPc.defaultProps = {
   bgColor: Color.ORANGE,
   headerColor: Color.BLUE,
   fontColor: Color.BLACK,
@@ -77,4 +77,4 @@ Header.defaultProps = {
   ],
 };
 
-export default Header;
+export default HeaderPc;

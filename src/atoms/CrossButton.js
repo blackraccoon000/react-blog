@@ -8,6 +8,7 @@ const CrossDiv = styled.div`
   height: ${(props) => props.divSize}px;
   position: relative;
   transition-duration: 1s;
+  top: ${(props) => props.top}px;
   width: ${(props) => props.divSize}px;
   z-index: 110;
 `;
