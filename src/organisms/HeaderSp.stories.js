@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './Header';
+import HeaderSp from './HeaderSp';
 import Color from '../styles/color';
 
 export default {
-  title: 'ORGANISMS/Header',
-  component: Header,
+  title: 'ORGANISMS/HeaderSp',
+  component: HeaderSp,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => <HeaderSp {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

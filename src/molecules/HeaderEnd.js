@@ -34,11 +34,7 @@ const HeaderEnd = ({
   linkArray,
 }) => {
   return (
-    <HeaderNav
-      borderColor={borderColor}
-      borderSize={borderSize}
-      fontSize={fontSize}
-    >
+    <HeaderNav borderColor={borderColor} borderSize={borderSize}>
       <ul>
         {linkArray.map((link) => (
           <li key={`${link.linkName}-li`}>
@@ -47,6 +43,7 @@ const HeaderEnd = ({
               linkName={link.linkName}
               linkPath={link.linkPath}
               fontColor={fontColor}
+              fontSize={fontSize}
             />
           </li>
         ))}
