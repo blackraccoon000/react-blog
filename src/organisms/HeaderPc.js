@@ -32,13 +32,19 @@ const HeaderPc = ({
   borderColor,
   borderSize,
   fontSize,
+  logoString,
   linkArray,
   headerColor,
 }) => {
   return (
     <SiteHeader headerColor={headerColor}>
       <HeaderContainer>
-        <HeaderStart bgColor={bgColor} fontColor={fontColor} size={size} />
+        <HeaderStart
+          bgColor={bgColor}
+          fontColor={fontColor}
+          size={size}
+          logoString={logoString}
+        />
         <HeaderEnd
           borderColor={borderColor}
           borderSize={borderSize}
@@ -59,6 +65,7 @@ HeaderPc.propTypes = {
   borderSize: PropTypes.number,
   fontSize: PropTypes.number,
   linkArray: PropTypes.array,
+  logoString: PropTypes.string,
   headerColor: PropTypes.string,
 };
 
@@ -75,6 +82,7 @@ HeaderPc.defaultProps = {
     { linkPath: '/dashboard', linkName: 'dashboard' },
     { linkPath: '/help', linkName: 'help' },
   ],
+  logoString: 'PlayWell',
 };
 
 export default HeaderPc;

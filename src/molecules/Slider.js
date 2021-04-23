@@ -14,11 +14,11 @@ const LeftMove = css`
   left: ${(props) =>
     props.flag
       ? props.size == 'small'
-        ? 250
+        ? 170
         : props.size == 'medium'
-        ? 240
+        ? 160
         : props.size == 'large'
-        ? 230
+        ? 150
         : 0
       : 0}px;
 `;
@@ -27,11 +27,11 @@ const RightMove = css`
   right: ${(props) =>
     props.flag
       ? props.size == 'small'
-        ? 250
+        ? 195
         : props.size == 'medium'
-        ? 240
+        ? 185
         : props.size == 'large'
-        ? 230
+        ? 175
         : 0
       : 0}px;
 `;
@@ -65,7 +65,11 @@ const MenuDiv = styled.div`
   z-index: 100;
 `;
 
-const ItemListNav = styled.nav``;
+const ItemListNav = styled.nav`
+  top: 70px;
+  left: 50px;
+  position: absolute;
+`;
 
 const Slider = ({
   bgColor,

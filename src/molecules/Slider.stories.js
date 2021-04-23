@@ -1,6 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import Slider from './Slider';
 import Color from '../styles/color';
+
+const Wrapper = styled.div`
+  padding: 50px;
+  top: 0;
+  left: 0;
+  border: 1px solid ${Color.BLACK};
+`;
 
 export default {
   title: 'MOLECULES/Slider',
@@ -10,7 +18,13 @@ export default {
   },
 };
 
-const Template = (args) => <Slider {...args} />;
+const Template = (args) => {
+  return (
+    <Wrapper>
+      <Slider {...args} />
+    </Wrapper>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {

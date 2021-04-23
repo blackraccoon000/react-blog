@@ -2,6 +2,7 @@
  * JavaScriptによる色指定
  * 参考　https://www.materialui.co/colors
  */
+
 export default {
   RED: '#ffcdd2',
   PINK: '#F8BBD0',

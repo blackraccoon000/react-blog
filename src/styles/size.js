@@ -1,16 +1,16 @@
 export const headerStartSize = {
   small: {
-    divSize: 31,
+    divSize: 21,
     fontSize: 12,
     radius: 15,
   },
   medium: {
-    divSize: 41,
+    divSize: 31,
     fontSize: 14,
     radius: 20,
   },
   large: {
-    divSize: 61,
+    divSize: 51,
     fontSize: 18,
     radius: 30,
   },

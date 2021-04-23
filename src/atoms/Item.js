@@ -14,6 +14,7 @@ const ItemSpan = styled.span`
   box-sizing: border-box;
   margin-left: 10px;
   font-size: ${(props) => props.fontSize}px;
+  font-family: 'Dancing Script', cursive;
   font-weight: 700;
 `;
 

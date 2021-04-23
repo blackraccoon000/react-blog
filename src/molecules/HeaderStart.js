@@ -16,6 +16,7 @@ const SiteTitle = styled.div`
 
   & h1 {
     font-size: ${(props) => props.fontSize}px;
+    font-family: 'Dancing Script', cursive;
     margin: 0;
     text-align: center;
   }
@@ -26,7 +27,7 @@ const SiteTitle = styled.div`
   }
 `;
 
-const HeaderStart = ({ bgColor, fontColor, size }) => {
+const HeaderStart = ({ bgColor, fontColor, size, logoString }) => {
   const siteTitleSize =
     size === 'small'
       ? headerStartSize.small
@@ -38,7 +39,7 @@ const HeaderStart = ({ bgColor, fontColor, size }) => {
   return (
     <SiteTitle bgColor={bgColor} fontColor={fontColor} {...siteTitleSize}>
       <h1 rel="home">
-        <a href="/">ロゴ</a>
+        <a href="/">{logoString}</a>
       </h1>
     </SiteTitle>
   );
@@ -47,12 +48,14 @@ const HeaderStart = ({ bgColor, fontColor, size }) => {
 HeaderStart.propTypes = {
   bgColor: PropTypes.string,
   fontColor: PropTypes.string,
+  logoString: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 HeaderStart.defaultProps = {
   bgColor: Color.ORANGE,
   fontColor: Color.WHITE,
+  logoString: 'PlayWell',
   size: 'small',
 };
 
