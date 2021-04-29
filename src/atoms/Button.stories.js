@@ -5,6 +5,21 @@ export default {
   title: 'ATOMS/Button',
   component: Button,
   argTypes: {
+    backgroundColor: {
+      control: 'color',
+    },
+    color: {
+      control: 'color',
+    },
+    fontSize: {
+      control: {
+        type: 'range',
+        min: 10,
+        max: 100,
+        step: 1,
+        default: 15,
+      },
+    },
     height: {
       control: {
         type: 'range',
@@ -21,6 +36,16 @@ export default {
         max: 500,
         step: 1,
         default: 200,
+      },
+    },
+    fontFamily: {
+      options: ['sans-serif', 'Bangers'],
+      control: {
+        type: 'radio',
+        labels: {
+          'sans-serif': 'sans-serif',
+          Bangers: 'Bangers',
+        },
       },
     },
   },

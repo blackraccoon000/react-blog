@@ -3,19 +3,17 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { transparentize, rgba } from 'polished';
 import Color from '../styles/color';
+import '../styles/fonts.css';
 
 const LabelBox = styled.label.attrs((props) => {
-  const { backgroundColor, fontColor, fontSize } = props;
-  const onCall = () => {
-    console.log('aaa');
-  };
+  const { backgroundColor, color, fontFamily, fontSize } = props;
   return {
     style: {
       backgroundColor,
-      color: fontColor,
+      color,
+      fontFamily,
       fontSize,
     },
-    onClick: onCall,
   };
 })`
   margin: 0;
@@ -24,30 +22,23 @@ const LabelBox = styled.label.attrs((props) => {
 `;
 
 const Label = (props) => {
-  const { backgroundColor, fontColor, fontSize, htmlFor, labelValue } = props;
-  return (
-    <LabelBox
-      backgroundColor={backgroundColor}
-      fontColor={fontColor}
-      fontSize={fontSize}
-      htmlFor={htmlFor}
-    >
-      {labelValue}
-    </LabelBox>
-  );
+  const { labelValue } = props;
+  return <LabelBox {...props}> {labelValue}</LabelBox>;
 };
 
 Label.propTypes = {
   backgroundColor: PropTypes.string,
-  fontColor: PropTypes.string,
+  color: PropTypes.string,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.number,
   htmlFor: PropTypes.string,
   labelValue: PropTypes.string.isRequired,
 };
 
 Label.defaultProps = {
-  backgroundColor: rgba(0, 0, 0, 0),
-  fontColor: rgba(0, 0, 0, 0),
+  backgroundColor: Color.BLACK,
+  color: Color.WHITE,
+  fontFamily: 'Bangers',
   fontSize: 21,
   htmlFor: '',
   labelValue: 'Play Well',
