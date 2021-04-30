@@ -13,6 +13,7 @@ const Link = styled.a.attrs((props) => {
 `;
 
 const UnorderedList = styled.ul.attrs((props) => {})`
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
