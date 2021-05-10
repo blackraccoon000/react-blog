@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import BlogCard2 from '../molecules/BlogCard2';
 
+const ContentWrapper = styled.div.attrs((props) => {})``;
+
 const UnorderedList = styled.ul.attrs((props) => {})`
   display: flex;
   flex-direction: row;
@@ -18,15 +20,17 @@ const Array = ['', '', '', '', '', '', '', '', '', '', ''];
 
 const ContentCards = (props) => {
   return (
-    <UnorderedList>
-      {Array.map((value, num) => {
-        return (
-          <ListItem key={`list_${num}`}>
-            <BlogCard2 />
-          </ListItem>
-        );
-      })}
-    </UnorderedList>
+    <ContentWrapper>
+      <UnorderedList>
+        {Array.map((value, num) => {
+          return (
+            <ListItem key={`list_${num}`}>
+              <BlogCard2 />
+            </ListItem>
+          );
+        })}
+      </UnorderedList>
+    </ContentWrapper>
   );
 };
 
