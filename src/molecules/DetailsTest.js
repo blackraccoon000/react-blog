@@ -16,9 +16,9 @@ const DropdownButton = styled.details.attrs((props) => {})`
     font-size: 100%;
     font-weight: 800;
     list-style: none;
-    margin: 15px;
+    margin: 20px;
     outline: none;
-    padding: 10px;
+    padding: 7px;
     text-align: center;
     transition: 0.8s;
     width: 165px;

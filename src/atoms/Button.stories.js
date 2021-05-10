@@ -39,12 +39,13 @@ export default {
       },
     },
     fontFamily: {
-      options: ['sans-serif', 'Bangers'],
+      options: ['sans-serif', 'Bangers', 'source-code-pro'],
       control: {
         type: 'radio',
         labels: {
           'sans-serif': 'sans-serif',
           Bangers: 'Bangers',
+          sourceCodePro: 'source-code-pro',
         },
       },
     },
