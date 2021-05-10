@@ -3,21 +3,34 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import res from '../atoms/microcmsGetImg';
 
-console.log(res.asyncData());
-
-const ContentBox = (props) => {
-  return (
-    <div>
-      <h1>Where the world builds software</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-        corporis unde qui voluptatem. Delectus iste ipsum doloremque aliquam
-        necessitatibus reiciendis incidunt, quam laborum, magnam esse officia
-        reprehenderit vitae praesentium ea!
-      </p>
-      {/* <img src="" /> */}
-    </div>
-  );
-};
+class ContentBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      string: '',
+      url: '',
+    };
+  }
+  componentDidMount() {
+    res.asyncData().then((value) => {
+      console.log(value.data);
+      this.setState({
+        title: value.data.head,
+        string: value.data.string,
+        url: value.data.image.url,
+      });
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.title}</h1>
+        <p>{this.state.string}</p>
+        <img src={this.state.url} />
+      </div>
+    );
+  }
+}
 
 export default ContentBox;
